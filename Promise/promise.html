@@ -10,17 +10,31 @@
 <body>
 
   <script>
-    function testPromise(input) {
+    function testPromise(inputNumber) {
       return new Promise((resolve, reject) => {
-        if (input) {
-          resolve(input);
+        if (inputNumber > 200) {
+          let devideTheInput = inputNumber / 2
+          resolve(devideTheInput);
         } else {
-          reject('失敗です')
+          reject('数字が200以下です')
         }
       })
     }
 
-    console.log(testPromise());
+    testPromise(1000).then(result1 => {
+      console.log(result1);
+      return testPromise(result1);
+    }).then(result2 => {
+      console.log(result2);
+      return testPromise(result2);
+    }).then(result3 => {
+      console.log(result3);
+      return testPromise(result3);
+    })
+
+    testPromise(100).then(result1 => {
+      console.log(result1);
+    }).catch(e => console.log('これ以上処理は続けられません。'));
 
   </script>
 </body>
