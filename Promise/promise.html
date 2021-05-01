@@ -10,32 +10,145 @@
 <body>
 
   <script>
-    function testPromise(inputNumber) {
-      return new Promise((resolve, reject) => {
-        if (inputNumber > 200) {
-          let devideTheInput = inputNumber / 2
-          resolve(devideTheInput);
-        } else {
-          reject('数字が200以下です')
-        }
+    // function testPromise(inputNumber) {
+    //   return new Promise((resolve, reject) => {
+    //     if (inputNumber > 200) {
+    //       let devideTheInput = inputNumber / 2
+    //       resolve(devideTheInput);
+    //     } else {
+    //       reject('数字が200以下です')
+    //     }
+    //   })
+    // }
+    // function testfunction(inputNumber) {
+    //   if (inputNumber > 200) {
+    //     let devideTheInput = inputNumber / 2
+    //     console.log(devideTheInput);
+    //   } else {
+    //     console.log('数字が200以下です');
+    //   }
+    // }
+    // testPromise(600);
+    //asyncの場合
+
+
+    // async function testAsync(speed) {
+    //   return new Promise(resolve => {
+    //     let power = speed * 300;
+    //     resolve(power);
+    //   })
+    // }
+
+    // testAsync(10).then(result => {
+    //   console.log(result);
+    //   return testAsync(result);
+    // }).then(result2 => {
+    //   console.log(result2);
+    //   return testAsync(result2);
+    // })
+
+
+    // function insideFunction(speed) {
+    //   return new Promise(resolve => {
+    //     let power = speed * 300;
+    //     console.log(power);
+    //     resolve(power);
+    //   })
+    // }
+
+    // async function aTest() {
+    //   await insideFunction(10);
+    //   insideFunction(0);
+    //   await insideFunction(20);
+    //   insideFunction(0);
+    //   await insideFunction(30);
+    //   insideFunction(0);
+    // }
+    // aTest();
+
+    function waiting(seconds) {
+      return new Promise(ok => {
+        setTimeout(() => {
+          console.log('本当に遅い');
+          ok()
+        }, 1000 * seconds)
       })
+    };
+
+    async function aTest2() {
+      console.log(1);
+      await waiting(2);
+      console.log(3);
+      await waiting(3);
+      console.log(5);
     }
 
-    testPromise(1000).then(result1 => {
-      console.log(result1);
-      return testPromise(result1);
-    }).then(result2 => {
-      console.log(result2);
-      return testPromise(result2);
-    }).then(result3 => {
-      console.log(result3);
-      return testPromise(result3);
-    })
+    aTest2();
 
-    testPromise(100).then(result1 => {
-      console.log(result1);
-    }).catch(e => console.log('これ以上処理は続けられません。'));
+    // function delayedAlert() {
+    //   timeoutID = window.setTimeout(() => { console.log('本当に遅い！'); }, 10 * 1000);
+    // }
 
+    // delayedAlert();
+
+    // async function testAsync() { return 'hello'; }
+    // console.log(testAsync());
+    // async function testAsync() { return hello; }
+    // console.log(testAsync());
+
+    //普通の関数
+    // function test() { }
+    // console.log(test());
+
+
+    // testAsync();
+
+    // testAsync().then(result => {
+    //   console.log(result);
+    //   return testPromise(result);
+    // }).then(result2 => {
+    //   console.log(result2);
+    //   return testPromise(result2);
+    // }).then(result3 => {
+    //   console.log(result3);
+    //   return testPromise(result3);
+    // });
+
+
+    // testPromise(1000).then(result1 => {
+    //   console.log(result1);
+    //   return testPromise(result1);
+    // }).then(result2 => {
+    //   console.log(result2);
+    //   return testPromise(result2);
+    // }).then(result3 => {
+    //   console.log(result3);
+    //   return testPromise(result3);
+    // })
+
+    // testPromise(100).then(result1 => {
+    //   console.log(result1);
+    // }).catch(e => console.log('これ以上処理は続けられません。'));
+
+
+
+    // function waiting(seconds) {
+    //   return new Promise(ok => {
+    //     setTimeout(() => {
+    //       ok()
+    //     }, 1000 * seconds)
+    //   })
+    // };
+
+    // async function aTest2() {
+    //   console.log(1);
+    //   await waiting(2);
+    //   console.log(3);
+    //   await waiting(3);
+    //   console.log(5);
+    // }
+
+    // aTest2();
   </script>
 </body>
 
