@@ -1,0 +1,11 @@
+{
+  "name": "hogehoge",
+  "description": "Hello, World",
+  "countries": {
+    "USA": "hello",
+    "UK": "hello",
+    "CHINA": "hello",
+    "JAPAN": "hello"
+  },
+  "email": "hogehoge@abc.com"
+}
