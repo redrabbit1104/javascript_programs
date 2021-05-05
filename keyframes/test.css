@@ -1,0 +1,18 @@
+.click_button {
+  position: absolute;
+  right: calc(100% - 380px);
+  top: 30px;
+}
+
+#keyframes {
+  animation: fadeImg 25s;
+}
+
+@keyframes fadeImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
