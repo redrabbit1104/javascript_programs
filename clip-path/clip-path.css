@@ -1,0 +1,25 @@
+#clip {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  height: 100px;
+  clip: rect(50px, 90px, 90px, 40px);
+}
+
+#clip_inset {
+  clip-path: inset(10px 20px 5px 8px);
+}
+
+#clip_circle {
+  clip-path: circle(30% at 50% 50%);
+}
+
+#clip_ellipse {
+  clip-path: ellipse(20px 30px at 50% 50%);
+}
+#clip_polygon {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#clip_path {
+  clip-path: path("M 0 200 L 0,75 A 5,5 0,0,1 150,75 L 200 200 z");
+}
