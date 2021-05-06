@@ -1,0 +1,9 @@
+.test[data-hoge] {
+  color: red;
+}
+
+.test::before {
+  content: attr(data-hoge);
+  font-size: 50px;
+  color: purple;
+}
