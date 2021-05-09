@@ -3,56 +3,21 @@
   height: 400px;
   margin: 0 auto;
   position: relative;
+  display: flex;
 }
 
 .carousel__main {
   width: 640px;
   height: 400px;
   margin: 0 auto;
+  clip-path: ellipse(40% 39% at 50% 50%);
 }
 
 .carousel__main > .active {
-  -webkit-animation: fadeImg 0.8s;
-          animation: fadeImg 0.8s;
-}
-
-.carousel__prev {
-  position: absolute;
-  top: 150px;
-  left: 20px;
-  cursor: pointer;
-  color: lightgray;
-}
-
-.carousel__prev:hover {
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-}
-
-.carousel__next {
-  position: absolute;
-  top: 150px;
-  right: 20px;
-  cursor: pointer;
-  color: lightgray;
-}
-
-.carousel__next:hover {
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-transform: translateX(10px);
-          transform: translateX(10px);
+  animation: fadeImg 0.8s;
 }
 
 .carousel__thumbnails {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   list-style: none;
   padding: 0;
 }
@@ -74,15 +39,6 @@
   width: 80px;
 }
 
-@-webkit-keyframes fadeImg {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeImg {
   from {
     opacity: 0;
@@ -91,4 +47,65 @@
     opacity: 1;
   }
 }
-/*# sourceMappingURL=app.css.map */
+
+.carousel_thumbnails_wrapper {
+  position: relative;
+}
+
+.carousel_thumbnails_wrapper__prev {
+  position: absolute;
+  top: 23px;
+  left: 110px;
+  cursor: pointer;
+  color: lightgray;
+  width: 30px;
+  height: 30px;
+}
+
+.carousel_thumbnails_wrapper__prev:hover {
+  transition-duration: 0.2s;
+  transform: translateX(-10px);
+}
+
+.carousel_thumbnails_wrapper__prev::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -2.5px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  transform: rotate(45deg);
+}
+
+.carousel_thumbnails_wrapper__next {
+  position: absolute;
+  top: 23px;
+  right: 110px;
+  cursor: pointer;
+  color: lightgray;
+  width: 30px;
+  height: 30px;
+}
+
+.carousel_thumbnails_wrapper__next:hover {
+  transition-duration: 0.2s;
+  transform: translateX(10px);
+}
+
+.carousel_thumbnails_wrapper__next::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -2.5px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  transform: rotate(-135deg);
+}
