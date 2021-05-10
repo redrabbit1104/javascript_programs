@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+
+    // throw 'エラー発生';
+
+    // const err = new Error();
+    // err.message = 'エラーです';
+    // throw err;
+    // const err = new Error('エラー');
+    // throw err;
+
+
+
+    const fruits = ['apple', 'banana', 'mango', 'orange'];
+    function getFruitName(num) {
+      num += 1;
+      if (fruits[num] != null) {
+        document.write(fruits[num]);
+      } else {
+        const err = new Error('エラー');
+        throw err;
+      }
+    }
+
+    try {
+      getFruitName(3);
+    }
+    catch (e) {
+      document.write(e);
+    }
+    finally {
+      document.write('お疲れ様です')
+    }
+  </script>
+
+</body>
+
+</html>
