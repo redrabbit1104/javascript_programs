@@ -1,5 +1,4 @@
 .slide {
-  border: solid 3px red;
   height: 400px;
   margin: 0 auto;
   position: relative;
@@ -17,6 +16,7 @@
   width: 90%;
   height: 280px;
   clip-path: inset(10% 25% 10% 25%);
+  overflow: hidden;
 }
 
 .slide_main__images div {
@@ -54,57 +54,10 @@
   position: absolute;
 }
 
-.slide_main__images > .active {
-  animation: fadeImg 3s;
-}
-
-@keyframes fadeImg {
-  from {
-    left: 25%;
-  }
-  to {
-    left: 75%;
-  }
-}
-
-.slide_buttons {
-  width: 240px;
-  height: 50px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.slide_buttons__prev {
-  position: absolute;
-  top: 23px;
-  right: 200px;
-  cursor: pointer;
-  color: lightgray;
-  width: 30px;
-  height: 30px;
-}
-
-.slide_buttons__prev:hover {
-  transition-duration: 0.2s;
-  transform: translateX(-10px);
-}
-
-.slide_buttons__prev::before {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  margin-top: 2.5px;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  transform: rotate(-135deg);
-}
-
 .slide_buttons__next {
   position: absolute;
-  top: 23px;
-  left: 200px;
+  top: 200px;
+  right: 300px;
   cursor: pointer;
   color: lightgray;
   width: 30px;

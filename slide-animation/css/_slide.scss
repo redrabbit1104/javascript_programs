@@ -1,11 +1,8 @@
 .slide {
-  border: solid 3px red;
-  // width: 840px;
   height: 400px;
   margin: 0 auto;
   position: relative;
   &_main {
-    // width: 640px;
     height: 400px;
     margin: 0 auto;
     &__images {
@@ -15,6 +12,7 @@
       width: 90%;
       height: 280px;
       clip-path: inset(10% 25% 10% 25%);
+      overflow: hidden;
       & div {
         height: 280px;
         cursor: pointer;
@@ -44,74 +42,31 @@
           position: absolute;
         }
       }
-      & > .active {
-        animation: fadeImg 3s;
-      }
     }
   }
 }
 
-@keyframes fadeImg {
-  from {
-    left: 25%;
+.slide_buttons__next {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  cursor: pointer;
+  color: lightgray;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    transition-duration: 0.2s;
+    transform: translateX(10px);
   }
-  to {
-    left: 75%;
-  }
-}
-
-.slide_buttons {
-  width: 240px;
-  height: 50px;
-  margin: 0 auto;
-  position: relative;
-  &__prev {
+  &::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
     position: absolute;
-    top: 23px;
-    right: 200px;
-    cursor: pointer;
-    color: lightgray;
-    width: 30px;
-    height: 30px;
-    &:hover {
-      transition-duration: 0.2s;
-      transform: translateX(-10px);
-    }
-    &::before {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      margin-top: 2.5px;
-      border-top: 1px solid #ccc;
-      border-right: 1px solid #ccc;
-      transform: rotate(-135deg);
-    }
-  }
-
-  &__next {
-    position: absolute;
-    top: 23px;
-    left: 200px;
-    cursor: pointer;
-    color: lightgray;
-    width: 30px;
-    height: 30px;
-    &:hover {
-      transition-duration: 0.2s;
-      transform: translateX(10px);
-    }
-    &::after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      margin-top: 2.5px;
-      border-top: 1px solid #ccc;
-      border-right: 1px solid #ccc;
-      transform: rotate(45deg);
-    }
+    margin-top: 2.5px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transform: rotate(45deg);
   }
 }

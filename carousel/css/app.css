@@ -14,7 +14,7 @@
 }
 
 .carousel__main > .active {
-  animation: fadeImg 0.8s;
+  animation: fadeImg 30s;
 }
 
 .carousel__thumbnails {

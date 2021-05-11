@@ -10,7 +10,7 @@
     margin: 0 auto;
     clip-path: ellipse(40% 39% at 50% 50%);
     & > .active {
-      animation: fadeImg 0.8s;
+      animation: fadeImg 30s;
     }
   }
   &__thumbnails {
