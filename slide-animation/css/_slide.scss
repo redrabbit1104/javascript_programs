@@ -1,7 +1,8 @@
 .slide {
   height: 400px;
-  margin: 0 auto;
   position: relative;
+  margin-top: 100px;
+  transform: rotate(-30deg);
   &_main {
     height: 400px;
     margin: 0 auto;
