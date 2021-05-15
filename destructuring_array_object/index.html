@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>destructing</title>
+</head>
+
+<body>
+
+  <script>
+    "user strict";
+    const fruits = ['apple', 'banana', 'orange'];
+    const [a, b, c] = fruits;
+
+    console.log(a, b, c);
+
+
+    const park = {
+      name: 'flower park',
+      location: '東京都新宿区高田馬場３丁目',
+      trees: ['ヒノキ', '竹', '松', '杉', 'イチョウ'],
+      flowers: ['薔薇', '桜', '朝顔', 'ひまわり'],
+      facilities: ['すべり台', 'ブランコ', 'トイレ', '噴水'],
+      selectProperty: function (treesIndex, flowersIndex) {
+        return [this.trees[treesIndex], this.flowers[flowersIndex]]
+      },
+      people: ['安田', '上村', ['鈴木', '福岡']],
+    }
+
+    let [first, , , , second] = park.trees;
+    console.log(first, second)
+    // const temp = first;    //tempという臨時変数にfirstを代入する
+    // first = second;
+    // second = temp;
+    // console.log(first, second);
+
+    const [first1, second1] = [second, first];
+    console.log(first1, second1);
+
+    const [selectedTree, selectedFlower] = park.selectProperty(0, 1);
+    console.log(selectedTree, selectedFlower);
+
+    const [selectedName1, , [selectedName2, ,]] = park.people;
+    console.log(selectedName1, selectedName2);
+
+    const [item1 = '雑木', item2 = '雑木', item3 = '雑木', item4 = '雑木', item5 = '雑木', item6 = '雑木'] = park.trees;
+    console.log(item1, item2, item3, item4, item5, item6);
+  </script>
+
+</body>
+
+</html>
