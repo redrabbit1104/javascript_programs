@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>destructing</title>
+</head>
+
+<body>
+
+  <script>
+    "user strict";
+    // const fruits = ['apple', 'banana', 'orange'];
+    // const [a, b, c] = fruits;
+
+    // console.log(a, b, c);
+
+
+    // const park = {
+    //   name: 'flower park',
+    //   location: '東京都新宿区高田馬場３丁目',
+    //   trees: ['ヒノキ', '竹', '松', '杉', 'イチョウ'],
+    //   flowers: ['薔薇', '桜', '朝顔', 'ひまわり'],
+    //   facilities: ['すべり台', 'ブランコ', 'トイレ', '噴水'],
+    //   selectProperty: function (treesIndex, flowersIndex) {
+    //     return [this.trees[treesIndex], this.flowers[flowersIndex]]
+    //   },
+    //   people: ['安田', '上村', ['鈴木', '福岡']],
+    // }
+
+    // let [first, , , , second] = park.trees;
+    // console.log(first, second)
+    // const temp = first;    //tempという臨時変数にfirstを代入する
+    // first = second;
+    // second = temp;
+    // console.log(first, second);
+
+    // const [first1, second1] = [second, first];
+    // console.log(first1, second1);
+
+    // const [selectedTree, selectedFlower] = park.selectProperty(0, 1);
+    // console.log(selectedTree, selectedFlower);
+
+    // const [selectedName1, , [selectedName2, ,]] = park.people;
+    // console.log(selectedName1, selectedName2);
+
+    // const [item1 = '雑木', item2 = '雑木', item3 = '雑木', item4 = '雑木', item5 = '雑木', item6 = '雑木'] = park.trees;
+    // console.log(item1, item2, item3, item4, item5, item6);
+
+
+    // const flowers = ['薔薇', '桜', '朝顔', 'ひまわり']
+    // const [a, b, c, d] = flowers;
+    // console.log(a, b, c, d);
+
+    // const fruits = {
+    //   name: 'apple',
+    //   price: 200,
+    //   taste: 'good',
+    // }
+
+    // let name = 'banana';
+    // let price = 300;
+    // let taste = 'not bad';
+    // ({ name, price, } = fruits);
+    // console.log(name, price, taste);
+    // const { a, b, c } = fruits;
+    // console.log(a, b, c);
+    // const { name, price, taste } = fruits;
+    // console.log(name, price, taste);
+    // const { name: a, price: b, taste: c } = fruits;
+    // console.log(a, b, c);
+    // const { name: a = 'null', price: b = 'null', taste: c = 'null', place = 'null' } = fruits;
+    // console.log(a, b, c, place);
+
+    const fruits = {
+      apple: {
+        place: {
+          tokyo: 'apple',
+          nagoya: 'banana',
+          koube: 'orange'
+        },
+      },
+    };
+
+    // const { apple } = fruits;
+    // console.log(apple);
+    // const { place } = fruits.apple;
+    // console.log(place);
+    // console.log(fruits.apple.place);
+    const {
+      place: { tokyo, nagoya, koube },
+    } = fruits.apple;
+    console.log(tokyo, nagoya, koube);
+
+
+  </script>
+
+</body>
+
+</html>
