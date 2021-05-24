@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // Falsy values: 0, '', undefined, null, NaN, 0n
+    console.log(Boolean(0));
+    console.log(Boolean(''));
+    console.log(Boolean(undefined));
+    console.log(Boolean(null));
+    console.log(Boolean(NaN));
+    console.log(Boolean(0n));
+
+    // Truthy values
+    console.log(Boolean('田中'));
+    console.log(Boolean(2));
+    console.log(Boolean({}));
+    console.log(Boolean([]));
+    console.log(Boolean('0'));
+
+    const money = 0;
+    if (money) {
+      console.log("お金がありません。");
+    } else {
+      console.log("お金があります。");
+    }
+
+    let car = 0;
+    if (car) {
+      console.log('Car is defined');
+    } else {
+      console.log('Car is Undefined');
+    }
+
+  </script>
+</body>
+
+</html>
