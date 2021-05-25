@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short_circuiting</title>
+</head>
+
+<body>
+
+  <script>
+    //Or演算子 - truthy values
+    console.log(1 || 'tanaka');
+
+    //Or演算子 - falsy values
+    console.log('' || 1);
+    console.log(true || undefined);
+    console.log(undefined || null);
+
+    console.log(NaN || '' || undefined || 0n || 'suzuki' || null || 0 || false || 'tanaka');
+
+    //objectにおけるOr演算子の応用
+    const trees = {
+      numTrees: 53,
+      printTrees: function () { console.log('松', '竹', 'ヒノキ') }
+    }
+
+    console.log(trees.numTrees);
+
+    const yearOfTrees = trees.Year || 20;
+    console.log(yearOfTrees);
+
+    //And演算子
+    console.log(0 && 'tanaka');
+    //8も'tanaka'もtruthy values
+    console.log(8 && 'tanaka');
+    console.log(1 && 'hello' && 3 && true && 'undefined' && 1 && undefined && 0 && false && 'tanaka');
+
+    //関数printTreesが存在する場合
+    trees.printTrees && trees.printTrees();
+    //関数printPeople()が存在しない場合
+    trees.printPeople && trees.printPeople();
+
+    console.log(trees.printPeople);
+  </script>
+</body>
+
+</html>
