@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nullish_coalescing_operator</title>
+</head>
+
+<body>
+
+  <script>
+
+    // let numFruits = 1;
+    // console.log(numFruits ?? 10);
+    // //1
+
+    // let numFruits = NaN;
+    // console.log(numFruits ?? 10);
+    // //NaN
+
+    // numFruits = false;
+    // console.log(numFruits ?? 10);
+    // //false
+
+    // numFruits = 0n;
+    // console.log(numFruits ?? 10);
+    // //0n
+
+    // numFruits = '';
+    // console.log(numFruits ?? 10);
+    // //
+
+    // numFruits = null;
+    // console.log(numFruits ?? 10);
+    // //10
+
+    // numFruits = undefined;
+    // console.log(numFruits ?? 10);
+    // //10
+
+    // let numFruits = NaN;
+    // console.log(numFruits && 10);
+    // //NaN
+
+    // numFruits = false;
+    // console.log(numFruits && 10);
+    // //false
+
+    // numFruits = 0n;
+    // console.log(numFruits && 10);
+    // //0n
+
+    // numFruits = '';
+    // console.log(numFruits && 10);
+    // //
+
+    // numFruits = null;
+    // console.log(numFruits && 10);
+    // //null  <---ここだけ違う
+
+    // numFruits = undefined;
+    // console.log(numFruits && 10);
+    // //undefined  <---ここだけ違う
+
+
+
+
+    const park = {
+      numTrees: 0,
+    }
+
+    // const trees = park.numTrees || 10;
+
+    const trees = park.numTrees ?? 10;
+    console.log(trees);
+
+
+  </script>
+</body>
+
+</html>
