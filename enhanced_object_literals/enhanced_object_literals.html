@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced_object_literals</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced_object_literals</title>
-</head>
+  <body>
+    <script>
+      const items = {
+        trees: ["ヒノキ", "竹", "松", "杉", "イチョウ"],
+        flowers: ["薔薇", "桜", "朝顔", "ひまわり"],
+      };
 
-<body>
+      const numItems = {
+        [items.trees[0]]: {
+          number: 10,
+        },
+        [`筆箱-${100 - 30}`]: {
+          number: 20,
+        },
+      };
 
-  <script>
-  
-const items = {
-    trees: ["ヒノキ", "竹", "松", "杉", "イチョウ"],
-    flowers: ["薔薇", "桜", "朝顔", "ひまわり"],
-};
+      console.log(numItems);
 
-const numItems = {
-    [items.trees[0]]: {
-      number: 10
-    },
-    [`筆箱-${100 - 30}`]:{
-      number: 20
-    },
-};
+      const park = {
+        name: "flower park",
+        location: "東京都新宿区高田馬場３丁目",
+        items,
+        facilities: ["すべり台", "ブランコ", "トイレ", "噴水"],
+        people: ["安田", "上村", ["鈴木", "福岡"]],
+        sumPrice(x, y, z) {
+          const sum = x + y + z;
+          console.log(sum);
+        },
+      };
 
-console.log(numItems);
-
-const park = {
-  name: "flower park",
-  location: "東京都新宿区高田馬場３丁目",
-  items,
-  facilities: ["すべり台", "ブランコ", "トイレ", "噴水"],
-  people: ["安田", "上村", ["鈴木", "福岡"]],
-  sumPrice(x, y, z) {
-  const sum = x + y + z;
-  console.log(sum);
-  },
-};
-
-park.sumPrice(1,2,3);
-  </script>
-</body>
-
+      park.sumPrice(1, 2, 3);
+    </script>
+  </body>
 </html>

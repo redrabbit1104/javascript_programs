@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional_chaining</title>
+  </head>
+
+  <body>
+    <script>
+      const stores = {
+        bookStore: {
+          mon: { open: 10, close: 20 },
+          tue: { open: 11, close: 19 },
+          sun: { open: 0, close: 20 },
+        },
+      };
+
+      // without optional chaining
+      // console.log(stores.bookStore.sun.open);  //エラーになる
+
+      // if (stores.bookStore.sun.open) console.log(stores.bookStore.sun.open);   //エラーになる。
+
+      // if (stores.bookStore && stores.bookStore.sun)
+      //   console.log(stores.bookStore.sun.open);
+
+      //with optional chaining
+      // console.log(stores.bookStore.sun?.open);
+
+      // console.log(stores.bookStore?.sun?.open);
+
+      const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+      for (const day of days) {
+        const open = stores.bookStore[day]?.open;
+        console.log(`${day}: ${open}時に開きます。`);
+      }
+
+      console.log(stores.add?.(2, 5));
+      console.log(stores.add?.(2, 5) ?? "存在しないメソッドです。");
+
+      const trees = [{ name: "ヒノキ" }, { numbers: 3 }];
+
+      console.log(trees[0]?.name ?? "木は存在しません。");
+      console.log(trees[1]?.name ?? "木は存在しません。");
+
+      if (trees.length > 0) console.log(trees[0].name);
+      else console.log("木は存在しません。");
+    </script>
+  </body>
+</html>
