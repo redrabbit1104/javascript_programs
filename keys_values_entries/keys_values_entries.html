@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keys_values_entries</title>
+  </head>
+
+  <body>
+    <script>
+      const bookStore = {
+        mon: { open: 10, close: 20 },
+        tue: { open: 11, close: 19 },
+        sun: { open: 0, close: 20 },
+      };
+
+      //Property Names
+
+      const props = Object.keys(bookStore);
+      console.log(props);
+
+      let numOpenDays = `${props.length} days`;
+      console.log(numOpenDays);
+
+      let openDay = "";
+      for (const day of props) {
+        openDay += `${day}  `;
+      }
+
+      console.log(openDay);
+
+      // Property Values
+      const val = Object.values(bookStore);
+      console.log(val);
+
+      // Entries
+      const entries = Object.entries(bookStore);
+      console.log(entries);
+
+      for (const element of entries) {
+        console.log(element);
+      }
+
+      for (const [key, {open, close}] of entries) {
+        console.log(`${key}, ${open}, ${close}`);
+      }
+    </script>
+  </body>
+</html>
