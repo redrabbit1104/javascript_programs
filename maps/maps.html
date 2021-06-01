@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>maps</title>
+  </head>
+
+  <body>
+    <p>Welcome Welcome Welcome</p>
+    <script>
+      const item = new Map();
+      item.set("name", "Tom");
+      item.set(1, "Tokyo, Japan");
+      console.log(item.set(2, "Tennis, Hobby"));
+
+      item
+        .set("list", ["Books", "Pencil", "Eraser", "Pen"])
+        .set("open", 9)
+        .set("close", 22)
+        .set(true, "We have")
+        .set(false, "We dont't have.");
+
+      console.log(item);
+
+      console.log(item.get("name"));
+      console.log(item.get(true));
+
+      const time = 23;
+      console.log(
+        item.get(time > item.get("open") && time < item.get("close"))
+      );
+
+      console.log(item.has("list"));
+
+      item.delete(2);
+      console.log(item);
+
+      console.log(item.size);
+      // item.clear();
+      console.log(item);
+
+      // item.set([1, 2], "hello");
+      // console.log(item);
+
+      // console.log(item.get([1, 2]));
+      //undefined
+
+      const arr = [1, 2];
+      item.set(arr, "hello");
+      console.log(item.get(arr));
+      //hello
+
+      item.set(document.querySelector("p"), "paragraph");
+      console.log(item);
+
+      //8: {p => "paragraph"}
+    </script>
+  </body>
+</html>
