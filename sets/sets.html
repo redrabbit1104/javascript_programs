@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sets</title>
+  </head>
+
+  <body>
+    <script>
+      //配列の場合
+      const foods = new Set([
+        "hamburger",
+        "potato",
+        "potato",
+        "chicken",
+        "hamburger",
+        "chicken",
+      ]);
+
+      console.log(foods);
+      //Set(3) {"hamburger", "potato", "chicken"}
+
+      //文字列の場合
+      const name = new Set("potato");
+      console.log(name);
+
+      //Set(4) {"p", "o", "t", "a"}
+
+      console.log(foods.length);
+      //undefined
+      console.log(foods.size);
+      //3
+
+      // console.log(foods.includes("hamburger"));
+      //エラーが出る
+      console.log(foods.has("hamburger"));
+      //true
+
+      foods.add("pizza");
+      foods.add("pizza");
+
+      console.log(foods);
+      //Set(4) {"hamburger", "potato", "chicken", "pizza"}
+
+      foods.delete("pizza");
+
+      console.log(foods);
+      //Set(3) {"hamburger", "potato", "chicken"}
+
+      console.log(foods.delete[0]);
+      //undefined
+
+      //要素をすべて削除
+      // foods.clear();
+
+      console.log(foods);
+      //Set(0) {}
+
+      const { a, b, c } = foods;
+
+      console.log(a, b, c);
+
+      //for of文を使って要素を個別に表示する
+      for (const food of foods) console.log(food);
+
+      //Setの使用例
+      const tools = [
+        "hammer",
+        "screwdriver",
+        "scraper",
+        "hammer",
+        "spanner",
+        "screwdriver",
+        "scraper",
+        "spaner",
+        "hammer",
+      ];
+
+      const setTools = new Set(tools);
+      //spread構文を使ってSetを配列にする
+      const toolsUnique = [...setTools];
+
+      console.log(toolsUnique);
+    </script>
+  </body>
+</html>
