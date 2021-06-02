@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>maps_iteration</title>
+  </head>
+
+  <body>
+    <script>
+      // const bookStore = new Map([
+      //   ["mon", { open: 10, close: 20 }],
+      //   ["tue", { open: 11, close: 19 }],
+      //   ["sun", { oepn: 0, close: 20 }],
+      // ]);
+
+      // console.log(bookStore);
+      const bookStore = {
+        mon: { open: 10, close: 20 },
+        tue: { open: 11, close: 19 },
+        sun: { open: 0, close: 20 },
+      };
+      const entries = Object.entries(bookStore);
+      console.log(entries);
+      //(3) [Array(2), Array(2), Array(2)]
+
+      const newMap = new Map(entries);
+      console.log(newMap);
+      //Map(3) {"mon" => {…}, "tue" => {…}, "sun" => {…}}
+
+      const items = new Map([
+        ["name", "John"],
+        [1, "school"],
+        [2, "home"],
+        ["正解", 2],
+        [true, "Yes"],
+        [false, "No"],
+      ]);
+
+      for (const [key, value] of items) {
+        if (typeof key === "number") console.log(`Guess ${key}: ${value}`);
+      }
+
+      //Guess 1: school
+      // Guess 2: home
+
+      // const answer = Number(prompt("答えは？"));
+      // const checkAnswer = items.get("正解") === answer;
+      // console.log(items.get(checkAnswer));
+
+      console.log([...items]);
+      //(6) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+      console.log([...items.entries()]);
+      //(6) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+      console.log([...items.keys()]);
+      //(6) ["name", 1, 2, "正解", true, false]
+      console.log([...items.values()]);
+      //(6) ["John", "school", "home", 2, "Yes", "No"]
+
+      const key1 = [...items.keys()];
+      console.log(key1);
+      console.log(key1[0]);
+    </script>
+  </body>
+</html>
