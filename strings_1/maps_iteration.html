@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string_1</title>
+  </head>
+
+  <body>
+    <script>
+      const railwayCompany = "Japan Railways Group";
+      const train = "Yamanotesen";
+
+      console.log(train[0]);
+      console.log(train[1]);
+      console.log(train[2]);
+
+      console.log(train.length);
+      //11
+
+      console.log(railwayCompany.indexOf("R"));
+      //6
+      console.log(railwayCompany.lastIndexOf("a"));
+      //11
+
+      console.log(railwayCompany.indexOf("Railways"));
+      //6
+      console.log(railwayCompany.indexOf("railways"));
+      //-1
+
+      console.log(railwayCompany.slice(6));
+      //Railways Group
+      console.log(railwayCompany.slice(6, 14));
+      //Railways
+
+      console.log(railwayCompany.slice(0, railwayCompany.indexOf(" ")));
+      //Japan
+      console.log(railwayCompany.slice(railwayCompany.lastIndexOf(" ") + 1));
+      //Group
+    </script>
+  </body>
+</html>
