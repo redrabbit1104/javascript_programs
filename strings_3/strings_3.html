@@ -8,8 +8,8 @@
 
   <body>
     <script>
-      const bank = "Mitsubishi UFJ Bank";
-      const splitBank = bank.split(" ");
+      const bank = 'Mitsubishi UFJ Bank';
+      const splitBank = bank.split(' ');
 
       console.log(splitBank);
       //(3) ["Mitsubishi", "UFJ", "Bank"]
@@ -27,15 +27,15 @@
         companyName1.toUpperCase(),
         companyName2,
         companyName3.toUpperCase(),
-      ].join("🌟");
+      ].join('🌟');
 
       console.log(joinBank);
       //MITSUBISHI🌟UFJ🌟BANK
 
-      const friendNames = "john messy louis jessy";
+      const friendNames = 'john messy louis jessy';
 
       const uppercaseFirstLetter = (name) => {
-        const names = name.split(" "); //名前を" "で分割し,names配列に格納
+        const names = name.split(' '); //名前を" "で分割し,names配列に格納
         const results = []; //結果を格納する配列
 
         for (const eachName of names) {
@@ -44,38 +44,38 @@
             eachName.replace(eachName[0], eachName[0].toUpperCase())
           );
         }
-        console.log(results.join(" ")); //配列のresultsにある値をjoinメソッドで結合
+        console.log(results.join(' ')); //配列のresultsにある値をjoinメソッドで結合
       };
 
       uppercaseFirstLetter(friendNames);
       //John Messy Louis Jessy
 
-      console.log(friendNames.padStart(30, "+"));
+      console.log(friendNames.padStart(30, '+'));
       //++++++++john messy louis jessy
 
-      console.log(friendNames.padEnd(30, "+"));
+      console.log(friendNames.padEnd(30, '+'));
       //john messy louis jessy++++++++
 
-      console.log(friendNames.padStart(30, "+").padEnd(40, "+"));
+      console.log(friendNames.padStart(30, '+').padEnd(40, '+'));
       //++++++++john messy louis jessy++++++++++
 
       const asteriskCardNumber = (card) => {
-        const strCard = card + "";
+        const strCard = card + '';
         const showCardNumber = strCard.slice(-4);
-        console.log(showCardNumber.padStart(strCard.length, "*"));
+        console.log(showCardNumber.padStart(strCard.length, '*'));
       };
 
       asteriskCardNumber(12340499030223);
       //**********0223
-      asteriskCardNumber("49892839048594");
+      asteriskCardNumber('49892839048594');
       //**********8594
 
-      const repeatMessage = "起きなさい!";
+      const repeatMessage = '起きなさい!';
       console.log(repeatMessage.repeat(10));
       //起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!起きなさい!
 
       const cars = (num) => {
-        console.log(`There are ${num} cars ${"🚗".repeat(num)} on the road.`);
+        console.log(`There are ${num} cars ${'🚗'.repeat(num)} on the road.`);
       };
 
       cars(5);
